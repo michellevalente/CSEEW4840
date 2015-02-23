@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="lab1">
+		<CBX_INST_ENTRY INSTANCE_NAME="|SoCKit_Top|lab1:lab1|memory:m|altsyncram:mem_rtl_0" CBX_FILE_NAME="altsyncram_60n1.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

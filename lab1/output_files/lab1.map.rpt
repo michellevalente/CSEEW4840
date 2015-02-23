@@ -1,0 +1,556 @@
+Analysis & Synthesis report for lab1
+Tue Feb  3 21:38:38 2015
+Quartus II 32-bit Version 13.1.1 Build 166 11/26/2013 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. General Register Statistics
+ 10. Registers Packed Into Inferred Megafunctions
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Source assignments for lab1:lab1|memory:m|altsyncram:mem_rtl_0|altsyncram_60n1:auto_generated
+ 13. Parameter Settings for User Entity Instance: VGA_LED_Emulator:led_emulator
+ 14. Parameter Settings for Inferred Entity Instance: lab1:lab1|memory:m|altsyncram:mem_rtl_0
+ 15. altsyncram Parameter Settings by Entity Instance
+ 16. Port Connectivity Checks: "VGA_LED_Emulator:led_emulator"
+ 17. Elapsed Time Per Partition
+ 18. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Tue Feb  3 21:38:38 2015       ;
+; Quartus II 32-bit Version       ; 13.1.1 Build 166 11/26/2013 SJ Full Version ;
+; Revision Name                   ; lab1                                        ;
+; Top-level Entity Name           ; SoCKit_Top                                  ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 39                                          ;
+; Total pins                      ; 166                                         ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 128                                         ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI TX Channels          ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CSXFC6D6F31C8ES   ;                    ;
+; Top-level entity name                                                           ; SoCKit_Top         ; lab1               ;
+; Family name                                                                     ; Cyclone V          ; Cyclone IV GX      ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation      ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                       ; Off                ; Off                ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; PowerPlay Power Optimization                                                    ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Synthesis Seed                                                                  ; 1                  ; 1                  ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 2           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                       ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                   ; Library ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------+---------+
+; SoCKit_Top.sv                    ; yes             ; User SystemVerilog HDL File  ; /home/user2/fall14/af2791/Desktop/lab1/SoCKit_Top.sv                           ;         ;
+; VGA_LED_Emulator.sv              ; yes             ; User SystemVerilog HDL File  ; /home/user2/fall14/af2791/Desktop/lab1/VGA_LED_Emulator.sv                     ;         ;
+; lab1.sv                          ; yes             ; User SystemVerilog HDL File  ; /home/user2/fall14/af2791/Desktop/lab1/lab1.sv                                 ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                 ; /opt/altera/quartus-13.1/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                 ; /opt/altera/quartus-13.1/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                 ; /opt/altera/quartus-13.1/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                 ; /opt/altera/quartus-13.1/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
+; aglobal131.inc                   ; yes             ; Megafunction                 ; /opt/altera/quartus-13.1/quartus/libraries/megafunctions/aglobal131.inc        ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                 ; /opt/altera/quartus-13.1/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
+; altrom.inc                       ; yes             ; Megafunction                 ; /opt/altera/quartus-13.1/quartus/libraries/megafunctions/altrom.inc            ;         ;
+; altram.inc                       ; yes             ; Megafunction                 ; /opt/altera/quartus-13.1/quartus/libraries/megafunctions/altram.inc            ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                 ; /opt/altera/quartus-13.1/quartus/libraries/megafunctions/altdpram.inc          ;         ;
+; db/altsyncram_60n1.tdf           ; yes             ; Auto-Generated Megafunction  ; /home/user2/fall14/af2791/Desktop/lab1/db/altsyncram_60n1.tdf                  ;         ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------+---------+
+
+
++----------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                    ;
++---------------------------------------------+------------------+
+; Resource                                    ; Usage            ;
++---------------------------------------------+------------------+
+; Estimate of Logic utilization (ALMs needed) ; 73               ;
+;                                             ;                  ;
+; Combinational ALUT usage for logic          ; 120              ;
+;     -- 7 input functions                    ; 2                ;
+;     -- 6 input functions                    ; 24               ;
+;     -- 5 input functions                    ; 10               ;
+;     -- 4 input functions                    ; 47               ;
+;     -- <=3 input functions                  ; 37               ;
+;                                             ;                  ;
+; Dedicated logic registers                   ; 39               ;
+;                                             ;                  ;
+; I/O pins                                    ; 166              ;
+; Total MLAB memory bits                      ; 0                ;
+; Total block memory bits                     ; 128              ;
+; Total DSP Blocks                            ; 0                ;
+; Maximum fan-out node                        ; OSC_50_B3B~input ;
+; Maximum fan-out                             ; 25               ;
+; Total fan-out                               ; 950              ;
+; Average fan-out                             ; 1.62             ;
++---------------------------------------------+------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                        ;
++----------------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                   ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                ; Library Name ;
++----------------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------+--------------+
+; |SoCKit_Top                                  ; 120 (4)           ; 39 (0)       ; 128               ; 0          ; 166  ; 0            ; |SoCKit_Top                                                                        ; work         ;
+;    |VGA_LED_Emulator:led_emulator|           ; 73 (73)           ; 21 (21)      ; 0                 ; 0          ; 0    ; 0            ; |SoCKit_Top|VGA_LED_Emulator:led_emulator                                          ; work         ;
+;    |lab1:lab1|                               ; 43 (0)            ; 18 (0)       ; 128               ; 0          ; 0    ; 0            ; |SoCKit_Top|lab1:lab1                                                              ; work         ;
+;       |controller:c|                         ; 17 (17)           ; 14 (14)      ; 0                 ; 0          ; 0    ; 0            ; |SoCKit_Top|lab1:lab1|controller:c                                                 ; work         ;
+;       |divider:d|                            ; 5 (5)             ; 4 (4)        ; 0                 ; 0          ; 0    ; 0            ; |SoCKit_Top|lab1:lab1|divider:d                                                    ; work         ;
+;       |hex7seg:h0|                           ; 7 (7)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |SoCKit_Top|lab1:lab1|hex7seg:h0                                                   ; work         ;
+;       |hex7seg:h2|                           ; 7 (7)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |SoCKit_Top|lab1:lab1|hex7seg:h2                                                   ; work         ;
+;       |hex7seg:h3|                           ; 7 (7)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |SoCKit_Top|lab1:lab1|hex7seg:h3                                                   ; work         ;
+;       |memory:m|                             ; 0 (0)             ; 0 (0)        ; 128               ; 0          ; 0    ; 0            ; |SoCKit_Top|lab1:lab1|memory:m                                                     ; work         ;
+;          |altsyncram:mem_rtl_0|              ; 0 (0)             ; 0 (0)        ; 128               ; 0          ; 0    ; 0            ; |SoCKit_Top|lab1:lab1|memory:m|altsyncram:mem_rtl_0                                ; work         ;
+;             |altsyncram_60n1:auto_generated| ; 0 (0)             ; 0 (0)        ; 128               ; 0          ; 0    ; 0            ; |SoCKit_Top|lab1:lab1|memory:m|altsyncram:mem_rtl_0|altsyncram_60n1:auto_generated ; work         ;
++----------------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                      ;
++-----------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+; Name                                                                              ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF  ;
++-----------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+; lab1:lab1|memory:m|altsyncram:mem_rtl_0|altsyncram_60n1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 16           ; 8            ; 16           ; 8            ; 128  ; None ;
++-----------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 39    ;
+; Number of registers using Synchronous Clear  ; 21    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 21    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 22    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------+
+; Registers Packed Into Inferred Megafunctions                        ;
++-------------------------------+------------------------------+------+
+; Register Name                 ; Megafunction                 ; Type ;
++-------------------------------+------------------------------+------+
+; lab1:lab1|memory:m|dout[0..7] ; lab1:lab1|memory:m|mem_rtl_0 ; RAM  ;
++-------------------------------+------------------------------+------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
+; 3:1                ; 4 bits    ; 8 LEs         ; 0 LEs                ; 8 LEs                  ; Yes        ; |SoCKit_Top|lab1:lab1|controller:c|a[1]              ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |SoCKit_Top|lab1:lab1|controller:c|din[1]            ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |SoCKit_Top|VGA_LED_Emulator:led_emulator|VGA_R[5]   ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 10 LEs               ; 2 LEs                  ; No         ; |SoCKit_Top|VGA_LED_Emulator:led_emulator|curSegs[0] ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 8 LEs                ; 2 LEs                  ; No         ; |SoCKit_Top|VGA_LED_Emulator:led_emulator|curSegs[2] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------+
+; Source assignments for lab1:lab1|memory:m|altsyncram:mem_rtl_0|altsyncram_60n1:auto_generated ;
++---------------------------------+--------------------+------+---------------------------------+
+; Assignment                      ; Value              ; From ; To                              ;
++---------------------------------+--------------------+------+---------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                               ;
++---------------------------------+--------------------+------+---------------------------------+
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: VGA_LED_Emulator:led_emulator ;
++----------------+-------------+---------------------------------------------+
+; Parameter Name ; Value       ; Type                                        ;
++----------------+-------------+---------------------------------------------+
+; HACTIVE        ; 10100000000 ; Unsigned Binary                             ;
+; HFRONT_PORCH   ; 00000100000 ; Unsigned Binary                             ;
+; HSYNC          ; 00011000000 ; Unsigned Binary                             ;
+; HBACK_PORCH    ; 00001100000 ; Unsigned Binary                             ;
+; HTOTAL         ; 11001000000 ; Unsigned Binary                             ;
+; VACTIVE        ; 0111100000  ; Unsigned Binary                             ;
+; VFRONT_PORCH   ; 0000001010  ; Unsigned Binary                             ;
+; VSYNC          ; 0000000010  ; Unsigned Binary                             ;
+; VBACK_PORCH    ; 0000100001  ; Unsigned Binary                             ;
+; VTOTAL         ; 1000001101  ; Unsigned Binary                             ;
++----------------+-------------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lab1:lab1|memory:m|altsyncram:mem_rtl_0 ;
++------------------------------------+----------------------+------------------------------+
+; Parameter Name                     ; Value                ; Type                         ;
++------------------------------------+----------------------+------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                      ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                   ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                 ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                 ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE               ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                      ;
+; OPERATION_MODE                     ; DUAL_PORT            ; Untyped                      ;
+; WIDTH_A                            ; 8                    ; Untyped                      ;
+; WIDTHAD_A                          ; 4                    ; Untyped                      ;
+; NUMWORDS_A                         ; 16                   ; Untyped                      ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                      ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                      ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                      ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                      ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                      ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                      ;
+; WIDTH_B                            ; 8                    ; Untyped                      ;
+; WIDTHAD_B                          ; 4                    ; Untyped                      ;
+; NUMWORDS_B                         ; 16                   ; Untyped                      ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                      ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                      ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                      ;
+; ADDRESS_REG_B                      ; CLOCK0               ; Untyped                      ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                      ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                      ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                      ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                      ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                      ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                      ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                      ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                      ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Untyped                      ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                      ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                      ;
+; BYTE_SIZE                          ; 8                    ; Untyped                      ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA             ; Untyped                      ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                      ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                      ;
+; INIT_FILE                          ; UNUSED               ; Untyped                      ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                      ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                      ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped                      ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                      ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped                      ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                      ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                      ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                      ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                      ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                      ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                      ;
+; DEVICE_FAMILY                      ; Cyclone V            ; Untyped                      ;
+; CBXI_PARAMETER                     ; altsyncram_60n1      ; Untyped                      ;
++------------------------------------+----------------------+------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                    ;
++-------------------------------------------+-----------------------------------------+
+; Name                                      ; Value                                   ;
++-------------------------------------------+-----------------------------------------+
+; Number of entity instances                ; 1                                       ;
+; Entity Instance                           ; lab1:lab1|memory:m|altsyncram:mem_rtl_0 ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                               ;
+;     -- WIDTH_A                            ; 8                                       ;
+;     -- NUMWORDS_A                         ; 16                                      ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                            ;
+;     -- WIDTH_B                            ; 8                                       ;
+;     -- NUMWORDS_B                         ; 16                                      ;
+;     -- ADDRESS_REG_B                      ; CLOCK0                                  ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                            ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                    ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA                                ;
++-------------------------------------------+-----------------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "VGA_LED_Emulator:led_emulator" ;
++------------+-------+----------+---------------------------+
+; Port       ; Type  ; Severity ; Details                   ;
++------------+-------+----------+---------------------------+
+; hex1[7]    ; Input ; Info     ; Stuck at GND              ;
+; hex1[4]    ; Input ; Info     ; Stuck at GND              ;
+; hex1[1]    ; Input ; Info     ; Stuck at GND              ;
+; hex4[4..3] ; Input ; Info     ; Stuck at GND              ;
+; hex4[7]    ; Input ; Info     ; Stuck at GND              ;
+; hex4[0]    ; Input ; Info     ; Stuck at GND              ;
+; hex5[7]    ; Input ; Info     ; Stuck at GND              ;
+; hex6[4..3] ; Input ; Info     ; Stuck at GND              ;
+; hex6[7]    ; Input ; Info     ; Stuck at GND              ;
+; hex6[0]    ; Input ; Info     ; Stuck at GND              ;
+; hex7[6]    ; Input ; Info     ; Stuck at GND              ;
++------------+-------+----------+---------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 32-bit Analysis & Synthesis
+    Info: Version 13.1.1 Build 166 11/26/2013 SJ Full Version
+    Info: Processing started: Tue Feb  3 21:38:34 2015
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab1 -c lab1
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file SoCKit_Top.sv
+    Info (12023): Found entity 1: SoCKit_Top
+Info (12021): Found 1 design units, including 1 entities, in source file VGA_LED_Emulator.sv
+    Info (12023): Found entity 1: VGA_LED_Emulator
+Info (12021): Found 5 design units, including 5 entities, in source file lab1.sv
+    Info (12023): Found entity 1: lab1
+    Info (12023): Found entity 2: divider
+    Info (12023): Found entity 3: controller
+    Info (12023): Found entity 4: hex7seg
+    Info (12023): Found entity 5: memory
+Info (12127): Elaborating entity "SoCKit_Top" for the top level hierarchy
+Info (12128): Elaborating entity "VGA_LED_Emulator" for hierarchy "VGA_LED_Emulator:led_emulator"
+Info (12128): Elaborating entity "lab1" for hierarchy "lab1:lab1"
+Info (12128): Elaborating entity "hex7seg" for hierarchy "lab1:lab1|hex7seg:h0"
+Info (12128): Elaborating entity "controller" for hierarchy "lab1:lab1|controller:c"
+Info (12128): Elaborating entity "memory" for hierarchy "lab1:lab1|memory:m"
+Info (12128): Elaborating entity "divider" for hierarchy "lab1:lab1|divider:d"
+Warning (10230): Verilog HDL assignment warning at lab1.sv(41): truncated value with size 32 to match size of target (4)
+Info (19000): Inferred 1 megafunctions from design logic
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "lab1:lab1|memory:m|mem_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 8
+        Info (286033): Parameter WIDTHAD_A set to 4
+        Info (286033): Parameter NUMWORDS_A set to 16
+        Info (286033): Parameter WIDTH_B set to 8
+        Info (286033): Parameter WIDTHAD_B set to 4
+        Info (286033): Parameter NUMWORDS_B set to 16
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK0
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter READ_DURING_WRITE_MODE_MIXED_PORTS set to OLD_DATA
+Info (12130): Elaborated megafunction instantiation "lab1:lab1|memory:m|altsyncram:mem_rtl_0"
+Info (12133): Instantiated megafunction "lab1:lab1|memory:m|altsyncram:mem_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
+    Info (12134): Parameter "WIDTH_A" = "8"
+    Info (12134): Parameter "WIDTHAD_A" = "4"
+    Info (12134): Parameter "NUMWORDS_A" = "16"
+    Info (12134): Parameter "WIDTH_B" = "8"
+    Info (12134): Parameter "WIDTHAD_B" = "4"
+    Info (12134): Parameter "NUMWORDS_B" = "16"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
+    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK0"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+    Info (12134): Parameter "READ_DURING_WRITE_MODE_MIXED_PORTS" = "OLD_DATA"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_60n1.tdf
+    Info (12023): Found entity 1: altsyncram_60n1
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "AUD_I2C_SCLK" is stuck at GND
+    Warning (13410): Pin "AUD_DACDAT" is stuck at GND
+    Warning (13410): Pin "AUD_MUTE" is stuck at GND
+    Warning (13410): Pin "AUD_XCK" is stuck at GND
+    Warning (13410): Pin "FAN_CTRL" is stuck at GND
+    Warning (13410): Pin "HSMC_CLKOUT_n[1]" is stuck at GND
+    Warning (13410): Pin "HSMC_CLKOUT_n[2]" is stuck at GND
+    Warning (13410): Pin "HSMC_CLKOUT_p[1]" is stuck at GND
+    Warning (13410): Pin "HSMC_CLKOUT_p[2]" is stuck at GND
+    Warning (13410): Pin "HSMC_CLK_OUT0" is stuck at GND
+    Warning (13410): Pin "HSMC_SCL" is stuck at GND
+    Warning (13410): Pin "TEMP_CS_n" is stuck at VCC
+    Warning (13410): Pin "TEMP_DIN" is stuck at GND
+    Warning (13410): Pin "TEMP_SCLK" is stuck at GND
+    Warning (13410): Pin "USB_EMPTY" is stuck at GND
+    Warning (13410): Pin "USB_FULL" is stuck at GND
+    Warning (13410): Pin "VGA_G[0]" is stuck at GND
+    Warning (13410): Pin "VGA_G[1]" is stuck at GND
+    Warning (13410): Pin "VGA_G[2]" is stuck at GND
+    Warning (13410): Pin "VGA_G[3]" is stuck at GND
+    Warning (13410): Pin "VGA_G[4]" is stuck at GND
+    Warning (13410): Pin "VGA_G[6]" is stuck at GND
+    Warning (13410): Pin "VGA_G[7]" is stuck at GND
+    Warning (13410): Pin "VGA_B[0]" is stuck at GND
+    Warning (13410): Pin "VGA_B[1]" is stuck at GND
+    Warning (13410): Pin "VGA_B[2]" is stuck at GND
+    Warning (13410): Pin "VGA_B[3]" is stuck at GND
+    Warning (13410): Pin "VGA_B[4]" is stuck at GND
+    Warning (13410): Pin "VGA_B[6]" is stuck at GND
+    Warning (13410): Pin "VGA_B[7]" is stuck at GND
+    Warning (13410): Pin "VGA_SYNC_n" is stuck at VCC
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 18 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "AUD_ADCDAT"
+    Warning (15610): No output dependent on input pin "HSMC_CLKIN_n[1]"
+    Warning (15610): No output dependent on input pin "HSMC_CLKIN_n[2]"
+    Warning (15610): No output dependent on input pin "HSMC_CLKIN_p[1]"
+    Warning (15610): No output dependent on input pin "HSMC_CLKIN_p[2]"
+    Warning (15610): No output dependent on input pin "HSMC_CLK_IN0"
+    Warning (15610): No output dependent on input pin "IRDA_RXD"
+    Warning (15610): No output dependent on input pin "OSC_50_B4A"
+    Warning (15610): No output dependent on input pin "OSC_50_B5B"
+    Warning (15610): No output dependent on input pin "OSC_50_B8A"
+    Warning (15610): No output dependent on input pin "PCIE_PERST_n"
+    Warning (15610): No output dependent on input pin "PCIE_WAKE_n"
+    Warning (15610): No output dependent on input pin "TEMP_DOUT"
+    Warning (15610): No output dependent on input pin "USB_B2_CLK"
+    Warning (15610): No output dependent on input pin "USB_OE_n"
+    Warning (15610): No output dependent on input pin "USB_RD_n"
+    Warning (15610): No output dependent on input pin "USB_WR_n"
+    Warning (15610): No output dependent on input pin "USB_RESET_n"
+Info (21057): Implemented 294 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 28 input pins
+    Info (21059): Implemented 49 output pins
+    Info (21060): Implemented 89 bidirectional pins
+    Info (21061): Implemented 120 logic cells
+    Info (21064): Implemented 8 RAM segments
+Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 52 warnings
+    Info: Peak virtual memory: 434 megabytes
+    Info: Processing ended: Tue Feb  3 21:38:38 2015
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:04
+
+
